@@ -159,7 +159,14 @@ namespace NuGetGallery
         [HttpGet]
         public virtual ActionResult SimulateError(SimulatedErrorType type = SimulatedErrorType.Exception)
         {
-            return type.MapToMvcResult();
+            if (type == SimulatedErrorType.ExceptionInView)
+            {
+                return View(type);
+            }
+            else
+            {
+                return type.MapToMvcResult();
+            }
         }
     }
 }

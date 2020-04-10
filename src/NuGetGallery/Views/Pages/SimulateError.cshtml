@@ -1,0 +1,17 @@
+﻿@model SimulatedErrorType
+@{
+    ViewBag.Title = "Simulated Error";
+}
+
+<section role="main" class="container main-container">
+    @if (Model == SimulatedErrorType.ExceptionInView)
+    {
+        throw new InvalidOperationException(Model.GetMessage());
+    }
+    else
+    {
+        <p>
+            Simulated error type: @Model
+        </p>
+    }
+</section>

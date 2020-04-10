@@ -59,6 +59,7 @@ namespace NuGetGallery
                     throw type.MapToException();
             }
         }
+
         public static string GetMessage(this SimulatedErrorType type)
         {
             return $"{nameof(SimulatedErrorType)} {type}";
